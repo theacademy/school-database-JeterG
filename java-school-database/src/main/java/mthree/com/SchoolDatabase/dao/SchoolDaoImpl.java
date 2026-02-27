@@ -17,17 +17,17 @@ public class SchoolDaoImpl implements SchoolDao {
     }
 
     /*
-    * Add each SQL statement to the methods below.
-    * The SQL statement must be completely inside the quotation marks provided
-    * in the existing Java statement:
-    *   String sql = "";
-    *
-    * Special notes:
-    *   - Strings must be inside single quotation marks (' ').
-    *   - Strings are case-sensitive.
-    *   - Semi-colons are optional at the end of the SQL statement.
-    *
-    * Do not change any code outside of the placeholders provided.
+     * Add each SQL statement to the methods below.
+     * The SQL statement must be completely inside the quotation marks provided
+     * in the existing Java statement:
+     * String sql = "";
+     *
+     * Special notes:
+     * - Strings must be inside single quotation marks (' ').
+     * - Strings are case-sensitive.
+     * - Semi-colons are optional at the end of the SQL statement.
+     *
+     * Do not change any code outside of the placeholders provided.
      */
 
     @Override
@@ -35,8 +35,7 @@ public class SchoolDaoImpl implements SchoolDao {
         // Write a query that returns all students (first name, last name only)
         // sorted by last name.
         // YOUR CODE STARTS HERE
-
-        String sql = "";
+        String sql = "SELECT fName,lName From student  ORDER BY lName";
 
         // YOUR CODE ENDS HERE
 
@@ -49,7 +48,7 @@ public class SchoolDaoImpl implements SchoolDao {
         // for all courses in the Computer Science department.
         // YOUR CODE STARTS HERE
 
-         String sql = "";
+        String sql = "SELECT courseCode, CourseDesc FROM course WHERE courseCode LIKE 'CS%'";
 
         // YOUR CODE ENDS HERE
         return jdbcTemplate.query(sql, new CourseMapper());
@@ -57,11 +56,12 @@ public class SchoolDaoImpl implements SchoolDao {
 
     @Override
     public List<TeacherCount> teacherCountByDept() {
-        //  Write a query that displays the department and the total number of teachers assigned to each department.
-        //  Name the aggregate field `teacherCount`.
+        // Write a query that displays the department and the total number of teachers
+        // assigned to each department.
+        // Name the aggregate field `teacherCount`.
         // YOUR CODE STARTS HERE
 
-        String sql = "";
+        String sql = "SELECT dept, COUNT(dept) as teacherCount FROM teacher GROUP BY dept";
 
         // YOUR CODE ENDS HERE
         return jdbcTemplate.query(sql, new TeacherCountMapper());
@@ -69,12 +69,13 @@ public class SchoolDaoImpl implements SchoolDao {
 
     @Override
     public List<StudentClassCount> studentsPerClass() {
-        // Write a query that lists the course code and course description for each course,
+        // Write a query that lists the course code and course description for each
+        // course,
         // with the number of students enrolled in each course.
         // Name the aggregate field `numStudents`.
         // YOUR CODE STARTS HERE
 
-        String sql = "";
+        String sql = "SELECT c.courseCode, c.courseDesc, COUNT(cs.course_id) numStudents from course c JOIN course_student cs ON c.cid = cs.course_id GROUP BY c.courseCode";
 
         // YOUR CODE ENDS HERE
         return jdbcTemplate.query(sql, new StudentCountMapper());
@@ -82,26 +83,26 @@ public class SchoolDaoImpl implements SchoolDao {
 
     // This step includes two parts. Both parts must be completed to pass the test.
     // Create a new student and enroll the new student in a course
-     @Override
+    @Override
     public void addStudent() {
         // Part 1: Write a query to add the student Robert Dylan to the student table.
-        // Need to add in the sid for Robert Dylan.  Use sid: 123
+        // Need to add in the sid for Robert Dylan. Use sid: 123
         // YOUR CODE STARTS HERE
 
-        String sql = "";
+        String sql = "INSERT INTO student (sid, fName, lName) values (123, 'Robert', 'Dylan')";
 
         // YOUR CODE ENDS HERE
-         System.out.println(jdbcTemplate.update(sql));
+        System.out.println(jdbcTemplate.update(sql));
 
     }
 
     @Override
     public void addStudentToClass() {
         // Part 2: Write a query to add Robert Dylan to CS148.
-        // You will need to include a sid in your query.  Use 123
+        // You will need to include a sid in your query. Use 123
         // YOUR CODE STARTS HERE
 
-        String sql = "";
+        String sql = "INSERT INTO course_student values (123, 1)";
 
         // YOUR CODE ENDS HERE
         jdbcTemplate.update(sql);
@@ -109,10 +110,11 @@ public class SchoolDaoImpl implements SchoolDao {
 
     @Override
     public void editCourseDescription() {
-        // Write a query to change the course description for course CS305 to "Advanced Python with Flask".
+        // Write a query to change the course description for course CS305 to "Advanced
+        // Python with Flask".
         // YOUR CODE STARTS HERE
 
-        String sql = "";
+        String sql = "UPDATE course SET courseDesc = 'Advanced Python with Flask' WHERE courseCode = 'CS305'";
 
         // YOUR CODE ENDS HERE
         jdbcTemplate.update(sql);
@@ -123,14 +125,14 @@ public class SchoolDaoImpl implements SchoolDao {
         // Write a query to remove David Mitchell as a teacher.
         // YOUR CODE STARTS HERE
 
-        String sql = "";
+        String sql = "DELETE FROM teacher WHERE tid = 9";
 
         // YOUR CODE ENDS HERE
         jdbcTemplate.update(sql);
     }
 
-    //***** EXTRA HELPER METHODS
-    //***** DO NOT CHANGE THE SQL STRING IN THESE METHODS!!!
+    // ***** EXTRA HELPER METHODS
+    // ***** DO NOT CHANGE THE SQL STRING IN THESE METHODS!!!
     @Override
     public List<Teacher> listAllTeachers() {
         String sql = "Select * from Teacher;";
