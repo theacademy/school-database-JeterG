@@ -1,9 +1,11 @@
 package mthree.com.SchoolDatabase.dao;
 
-import mthree.com.SchoolDatabase.model.StudentClassCount;
-import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import mthree.com.SchoolDatabase.model.StudentClassCount;
 
 public class StudentCountMapper implements RowMapper<StudentClassCount> {
     @Override

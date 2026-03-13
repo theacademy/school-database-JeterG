@@ -1,16 +1,17 @@
 package mthree.com.SchoolDatabase.controller;
 
-import mthree.com.SchoolDatabase.dao.SchoolDao;
-import mthree.com.SchoolDatabase.model.Course;
-import mthree.com.SchoolDatabase.model.Student;
-import mthree.com.SchoolDatabase.model.StudentClassCount;
-import mthree.com.SchoolDatabase.model.TeacherCount;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import mthree.com.SchoolDatabase.dao.SchoolDao;
+import mthree.com.SchoolDatabase.model.Course;
+import mthree.com.SchoolDatabase.model.Student;
+import mthree.com.SchoolDatabase.model.StudentClassCount;
+import mthree.com.SchoolDatabase.model.TeacherCount;
 
 @RestController
 @RequestMapping("/db")

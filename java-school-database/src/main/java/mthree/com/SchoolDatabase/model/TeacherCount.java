@@ -4,7 +4,6 @@ public class TeacherCount {
     private String dept;
     private int count;
 
-
     public String getDept() {
         return dept;
     }

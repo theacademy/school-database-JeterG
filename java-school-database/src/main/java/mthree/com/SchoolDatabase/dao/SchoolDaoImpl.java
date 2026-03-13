@@ -1,10 +1,16 @@
 package mthree.com.SchoolDatabase.dao;
 
-import mthree.com.SchoolDatabase.model.*;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import java.util.List;
+
+import mthree.com.SchoolDatabase.model.Course;
+import mthree.com.SchoolDatabase.model.Student;
+import mthree.com.SchoolDatabase.model.StudentClassCount;
+import mthree.com.SchoolDatabase.model.Teacher;
+import mthree.com.SchoolDatabase.model.TeacherCount;
 
 @Repository
 public class SchoolDaoImpl implements SchoolDao {

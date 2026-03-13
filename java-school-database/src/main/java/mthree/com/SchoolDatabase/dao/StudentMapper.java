@@ -1,9 +1,11 @@
 package mthree.com.SchoolDatabase.dao;
 
-import mthree.com.SchoolDatabase.model.Student;
-import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import mthree.com.SchoolDatabase.model.Student;
 
 public class StudentMapper implements RowMapper<Student> {
 

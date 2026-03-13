@@ -1,10 +1,11 @@
 package mthree.com.SchoolDatabase.dao;
 
-import mthree.com.SchoolDatabase.model.Course;
-import org.springframework.jdbc.core.RowMapper;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import mthree.com.SchoolDatabase.model.Course;
 
 public class CourseMapper implements RowMapper<Course> {
     @Override

@@ -1,15 +1,24 @@
 package mthree.com.SchoolDatabase;
 
-import mthree.com.SchoolDatabase.dao.SchoolDao;
-import mthree.com.SchoolDatabase.dao.SchoolDaoImpl;
-import mthree.com.SchoolDatabase.model.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.List;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
 import org.springframework.jdbc.core.JdbcTemplate;
-import java.util.List;
-import static org.junit.jupiter.api.Assertions.*;
+
+import mthree.com.SchoolDatabase.dao.SchoolDao;
+import mthree.com.SchoolDatabase.dao.SchoolDaoImpl;
+import mthree.com.SchoolDatabase.model.Course;
+import mthree.com.SchoolDatabase.model.Student;
+import mthree.com.SchoolDatabase.model.StudentClassCount;
+import mthree.com.SchoolDatabase.model.Teacher;
+import mthree.com.SchoolDatabase.model.TeacherCount;
 
 @DataJdbcTest
 public class CourseDAOTest {
@@ -36,7 +45,7 @@ public class CourseDAOTest {
     public void GetAllComputerSciCourses() {
         List<Course> CSC = dao.csCourses();
         assertEquals(9, CSC.size());
-        //contains CS
+        // contains CS
     }
 
     @Test
@@ -49,7 +58,7 @@ public class CourseDAOTest {
                 i++;
             }
         }
-        //cs = Computer Science
+        // cs = Computer Science
         int j = 0;
         for (TeacherCount csClassCount : TC) {
             if (csClassCount.getDept() != null && csClassCount.getDept().contains("Computer Science")) {
@@ -79,7 +88,7 @@ public class CourseDAOTest {
     @Test
     @DisplayName("Test if Robert Dylan was added to course CS148")
     public void addStudentToCourse() {
-        dao.addStudent();  //does not exec if run all together
+        dao.addStudent(); // does not exec if run all together
         dao.addStudentToClass();
         List<Student> students = dao.studentsCS148();
         System.out.println(students);
@@ -94,7 +103,6 @@ public class CourseDAOTest {
         assertTrue(i != 0);
     }
 
-
     @Test
     @DisplayName("Test if name updated to Advanced Python with Flask for CS305")
     public void editcourseCode() {
@@ -106,7 +114,7 @@ public class CourseDAOTest {
                 i++;
             }
         }
-        assertTrue (i == 1 );
+        assertTrue(i == 1);
         int j = 0;
         for (Course cs : courses) {
             if (cs.getCourseCode().contains("CS305")) {

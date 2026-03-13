@@ -4,12 +4,13 @@ The database for this assignment is embedded in the code provided in the GitHub 
 
 This page includes details about the database used in this assignment.
 
-* [Database Diagram](#database-diagram)
-* [Data Tables](#data)
-  * [course](#course)
-  * [course_student](#course_student)
-  * [student](#student)
-  * [teacher](#teacher)
+- [Database Information](#database-information)
+    - [Database Diagram](#database-diagram)
+    - [Data Tables](#data-tables)
+      - [course](#course)
+      - [course\_student](#course_student)
+      - [student](#student)
+      - [teacher](#teacher)
 
 ### Database Diagram
 
@@ -49,22 +50,22 @@ The data tables are listed below.
 
 #### course
 
-| cid  | courseCode | courseDesc                          | teacherId |
-| ---- | ---------- | ----------------------------------- | --------- |
-| 1    | CS148      | Intro to Data Structures            | 1         |
-| 2    | CS100      | Intro to Java                       | 2         |
-| 3    | CS202      | Intermediate Java                   | 1         |
-| 4    | CS305      | Advanced Python                     | 5         |
-| 5    | CS407      | Information Systems Management      | 4         |
-| 6    | CS206      | Network Design                      | 4         |
-| 7    | CS503      | Advanced Cyber Security             | 3         |
-| 8    | CS326      | Advanced Fortran                    | 5         |
-| 10   | CS324      | Advanced Web Services with Java API | 3         |
-| 11   | EN220      | Fictional Writing                   | 10        |
-| 12   | EN250      | Fantasy Fictional Writing           | 11        |
-| 14   | EN100      | Writing Basics                      |           |
-| 15   | EN200      | English Composition                 |           |
-| 16   | EN300      | Poetry Writing                      |           |
+| cid | courseCode | courseDesc                          | teacherId |
+| --- | ---------- | ----------------------------------- | --------- |
+| 1   | CS148      | Intro to Data Structures            | 1         |
+| 2   | CS100      | Intro to Java                       | 2         |
+| 3   | CS202      | Intermediate Java                   | 1         |
+| 4   | CS305      | Advanced Python                     | 5         |
+| 5   | CS407      | Information Systems Management      | 4         |
+| 6   | CS206      | Network Design                      | 4         |
+| 7   | CS503      | Advanced Cyber Security             | 3         |
+| 8   | CS326      | Advanced Fortran                    | 5         |
+| 10  | CS324      | Advanced Web Services with Java API | 3         |
+| 11  | EN220      | Fictional Writing                   | 10        |
+| 12  | EN250      | Fantasy Fictional Writing           | 11        |
+| 14  | EN100      | Writing Basics                      |           |
+| 15  | EN200      | English Composition                 |           |
+| 16  | EN300      | Poetry Writing                      |           |
 
 **[Back to top](#database-information)**
 
@@ -114,32 +115,32 @@ The data tables are listed below.
 
 #### student
 
-| sid  | fName   | lName       |
-| ---- | ------- | ----------- |
-| 1    | Jolene  | Westcott    |
-| 2    | Tabby   | Daniell     |
-| 3    | Hans    | Wozniak     |
-| 4    | Ifeanyi | Derichs     |
-| 5    | Guafrid | Lopez       |
-| 6    | Helena  | Abbandonato |
-| 7    | Aime    | Larsen      |
-| 9    | Milada  | Dreher      |
+| sid | fName   | lName       |
+| --- | ------- | ----------- |
+| 1   | Jolene  | Westcott    |
+| 2   | Tabby   | Daniell     |
+| 3   | Hans    | Wozniak     |
+| 4   | Ifeanyi | Derichs     |
+| 5   | Guafrid | Lopez       |
+| 6   | Helena  | Abbandonato |
+| 7   | Aime    | Larsen      |
+| 9   | Milada  | Dreher      |
 
 **[Back to top](#database-information)**
 
 #### teacher
 
-| tid  | tFName   | tLName   | dept             |
-| ---- | -------- | -------- | ---------------- |
-| 1    | Hedy     | Lamarr   | Computer Science |
-| 2    | Radia    | Perlman  | Computer Science |
-| 3    | Annie    | Easley   | Computer Science |
-| 4    | Peter    | Denning  | Computer Science |
-| 5    | Ravi     | Sethi    | Computer Science |
-| 7    | Hilary   | Mantel   | English          |
-| 8    | Margaret | Atwood   | English          |
-| 9    | David    | Mitchell | English          |
-| 10   | Michael  | Chabon   | English          |
-| 11   | Neil     | Gaiman   | English          |
+| tid | tFName   | tLName   | dept             |
+| --- | -------- | -------- | ---------------- |
+| 1   | Hedy     | Lamarr   | Computer Science |
+| 2   | Radia    | Perlman  | Computer Science |
+| 3   | Annie    | Easley   | Computer Science |
+| 4   | Peter    | Denning  | Computer Science |
+| 5   | Ravi     | Sethi    | Computer Science |
+| 7   | Hilary   | Mantel   | English          |
+| 8   | Margaret | Atwood   | English          |
+| 9   | David    | Mitchell | English          |
+| 10  | Michael  | Chabon   | English          |
+| 11  | Neil     | Gaiman   | English          |
 
 **[Back to top](#database-information)**
